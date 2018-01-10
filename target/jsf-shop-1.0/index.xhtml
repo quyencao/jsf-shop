@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:composition template="/layouts/default-layout.xhtml">
+		<ui:param name="title" value="Homepage"></ui:param>
+		<ui:define name="content">
+			<ui:repeat var="p" value="#{products.products}">
+				<ui:decorate template="/common/product.xhtml">
+					<ui:param name="name" value="#{p.name}"></ui:param>
+					<ui:param name="description" value="#{p.description}"></ui:param>
+					<ui:param name="price" value="#{p.price}"></ui:param>
+					<ui:param name="id" value="#{p.id}"></ui:param>
+				</ui:decorate>
+			</ui:repeat>
+			#{addProduct.product.name}
+		</ui:define>
+	</ui:composition>
+</html>

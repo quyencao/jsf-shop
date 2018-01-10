@@ -1,0 +1,13 @@
+body {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.product {
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+.errors {
+	color: red;
+}

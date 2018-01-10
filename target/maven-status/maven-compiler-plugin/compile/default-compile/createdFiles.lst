@@ -1,0 +1,7 @@
+jsf\shop\Product.class
+jsf\shop\ProductsInterface.class
+jsf\shop\ProductsService.class
+jsf\shop\Products.class
+jsf\shop\AddProduct.class
+jsf\shop\ProductDetails.class
+jsf\shop\ProductServiceAnotation.class

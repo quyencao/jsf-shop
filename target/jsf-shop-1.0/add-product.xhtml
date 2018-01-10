@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:composition template="/layouts/default-layout.xhtml">
+		<ui:param name="title" value="Add Product"></ui:param>
+		<ui:define name="header">
+			<h1>Add Product</h1>
+		</ui:define>
+		<ui:define name="content">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel for="name">Name</h:outputLabel>
+					<h:inputText id="name" value="#{addProduct.product.name}" 
+						validatorMessage="Name must be bettween 5 and 30 letters">
+						<f:validateLength minimum="5" maximum="30"/>
+					</h:inputText>
+				
+					<h:outputLabel for="description">Description</h:outputLabel>
+					<h:inputTextarea id="description" value="#{addProduct.product.description}">
+						
+					</h:inputTextarea>
+				
+					<h:outputLabel for="price">Price</h:outputLabel>
+					<h:inputText id="price" value="#{addProduct.product.price}" requiredMessage="Please enter this field"
+						converterMessage="Price must be a number">
+						<f:validateRequired />
+						<f:convertNumber maxFractionDigits="2" currencyCode="USD"/>
+					</h:inputText>
+					<h:commandButton value="Add product" action="#{addProduct.add}"></h:commandButton>
+				</h:panelGrid>
+				<h:messages styleClass="errors"/>
+			</h:form>
+			<h:outputLink value="index.xhtml">Back</h:outputLink>
+		</ui:define>
+	</ui:composition>
+</html>
